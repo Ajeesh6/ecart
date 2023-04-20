@@ -1,0 +1,54 @@
+<!-- Header-->
+<header class=" py-5" style="background-color: rgb(44, 114, 98);">
+    <div class="container px-4 px-lg-5 my-5" >
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Smart phones</h1>
+            <p class="lead fw-normal text-white-50 mb-0">Treat yourself to a new Mobile Phone</p>
+        </div>
+    </div>
+</header>
+
+
+<div class="container" style="margin-top: 15px;">
+    <div class="container d-flex row text-center">
+        <div class="container d-flex col-sm-2 d1"><a (click)="filter('')"><img class="rounded-circle l1" src="https://i.postimg.cc/3JymL7qW/view-all.gif" alt=""><h4>view all</h4></a></div>
+        <div class="container d-flex col-sm-2 d1"><a (click)="filter('1')"><img class="rounded-circle l1 " src="https://i.postimg.cc/vBy3wg2N/apple-logo.gif" alt=""><h4>apple</h4></a></div>
+        <div class="container d-flex col-sm-2 d1"><a (click)="filter('2')"><img class="rounded-circle l1" src="https://i.postimg.cc/5NX5GSNt/oneplus-logo.gif" alt=""><h4>oneplus</h4></a></div>
+        <div class="container d-flex col-sm-2 d1"><a (click)="filter('3')"><img class="rounded-circle l1" src="https://i.postimg.cc/T3Ngdy7P/samsung-logo.gif" alt=""><h4>samsung</h4></a></div>
+        <div class="container d-flex col-sm-2 d1"><a (click)="filter('4')"><img class="rounded-circle l1" src="https://i.postimg.cc/fL9xgwvR/mi-logo.gif" alt=""><h4>xiaomi</h4></a></div>
+        <div class="container d-flex col-sm-2 d1"><a (click)="filter('5')"><img class="rounded-circle l1" src="https://i.postimg.cc/m2DzQjhV/realme-logo.gif" alt=""><h4>realme</h4></a></div>
+        
+        
+    
+    </div> 
+</div>
+
+<!-- Section-->
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div *ngFor="let i of filterProducts | filter:searchKey:'productName'" class="col mb-5 ">
+                <div class="card h-100 r1">
+                    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">{{i.isAvailable}}</div>
+                    <!-- Product image-->
+                    <img class="card-img-top" src="{{i.productImage}}" alt="..." style="height: auto;" />
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">{{i.productName}}</h5>
+                            <!-- Product price-->
+                            {{i.price}}
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" routerLink="view_product/{{i.id}}">View
+                                options</a></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

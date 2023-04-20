@@ -1,0 +1,24 @@
+.l1{
+    height: 165px;
+    width: 186px;
+    padding: 15px;
+    
+    
+}
+.r1{
+    transition: 0.2s ease-in-out ;
+  }
+  .r1:hover{
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+  }
+
+  h4{
+    color:rgb(44, 114, 98) ;
+  }
+
+  .d1:hover{
+    border: 2px solid rgb(44, 114, 98);
+    border-radius: 5%;
+  }
